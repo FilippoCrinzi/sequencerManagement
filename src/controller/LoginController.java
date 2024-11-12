@@ -6,6 +6,7 @@ package controller;
 
 import Dao.UserDAO;
 import view.Login;
+import view.MainView;
 
 /**
  *
@@ -32,6 +33,10 @@ public class LoginController {
             // Qui puoi anche chiudere la finestra di login se necessario
             System.out.println("Accesso riuscito");
             loginView.dispose(); 
+            MainView mainView = new MainView();
+            MainViewController controller = new MainViewController(mainView);
+            mainView.setLocationRelativeTo(null);
+            mainView.setVisible(true);
         } else {
             // Mostra messaggio di errore
             loginView.setErrorMessage("Credenziali errate. Riprova.");
